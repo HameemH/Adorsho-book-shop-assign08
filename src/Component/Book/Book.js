@@ -1,9 +1,11 @@
 import React from 'react';
 import './Book.css'
-const Book = () => {
+const Book = (props) => {
+    console.log(props.book);
+    const {id, name, image, price} = props.book;
     return (
-        <div>
-            
+        <div className='book-card'>
+            <img src={image} alt="" />
         </div>
     );
 };
