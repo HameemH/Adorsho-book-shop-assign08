@@ -16,10 +16,15 @@ const Bookshop = () => {
         
     ]
     return (
-        <div>
+        <div className='bookshop-container'>
+            <div className="book-container">
             {
                 Books.map(book => <Book key={book.id} book={book}></Book>)
             }
+            </div>
+            <div className='booklist-conatianer'>
+
+            </div>
         </div>
     );
 };
