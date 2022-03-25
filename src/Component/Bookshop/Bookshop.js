@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Book from '../Book/Book';
 import Wishlist from '../Wishlist/Wishlist';
 import './Bookshop.css';
+
 
 const Bookshop = () => {
     const Books = [
@@ -16,8 +17,10 @@ const Bookshop = () => {
         {id:9, name: 'Book9', price:10, image: 'https://images.unsplash.com/photo-1542871793-fd7e2b3cd0b8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=452&q=80'},
         
     ];
-    const handleWishlist = () =>{
-        console.log('clicked');
+    const [wishlist, setWishlist] = useState([])
+    const handleWishlist = (book) =>{
+       const newWishlist = [...wishlist, book];
+       setWishlist(newWishlist)
     }
     return (
         <div className='bookshop-container'>
@@ -27,7 +30,7 @@ const Bookshop = () => {
             }
             </div>
             <div className='booklist-conatianer'>
-                <Wishlist></Wishlist>
+            {wishlist.map(book =><Wishlist key={book.id} wishlist={book}></Wishlist>)}
             </div>
         </div>
     );

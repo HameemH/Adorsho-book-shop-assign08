@@ -1,9 +1,11 @@
 import React from 'react';
 
-const Wishlist = () => {
+const Wishlist = ({wishlist}) => {
+  
+   console.log(wishlist);
     return (
         <div>
-            <h1>this is wishlist</h1>
+            <h1>{wishlist.name}</h1>
         </div>
     );
 };

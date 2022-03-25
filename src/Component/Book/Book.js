@@ -3,8 +3,8 @@ import { faBook } from '@fortawesome/free-solid-svg-icons'
 import React from 'react';
 import './Book.css'
 const Book = (props) => {
-    const {handleWishlist} = props;
-    const {id, name, image, price} = props.book;
+    const {handleWishlist, book} = props;
+    const {id, name, image, price} = book;
     return (
         <div className='book-card'>
             <img src={image} alt=""/>
@@ -12,7 +12,7 @@ const Book = (props) => {
                 <h3>Name:{name}</h3>
                 <p>Price:${price}</p>
             </div>
-            <button onClick={() => handleWishlist()} className='btn-wishlist'>Add to Booklist <FontAwesomeIcon icon={faBook}></FontAwesomeIcon></button>
+            <button onClick={() => handleWishlist(book)} className='btn-wishlist'>Add to Booklist <FontAwesomeIcon icon={faBook}></FontAwesomeIcon></button>
         </div>
     );
 };
