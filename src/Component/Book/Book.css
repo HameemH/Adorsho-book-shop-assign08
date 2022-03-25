@@ -25,3 +25,7 @@
     position: absolute;
     bottom: 0;
 }
+
+.btn-wishlist:hover{
+    background-color: orange;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import Book from '../Book/Book';
+import Wishlist from '../Wishlist/Wishlist';
 import './Bookshop.css';
 
 const Bookshop = () => {
@@ -14,16 +15,19 @@ const Bookshop = () => {
         {id:8, name: 'Book8', price:10, image: 'https://images.unsplash.com/photo-1621351183012-e2f9972dd9bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80'},
         {id:9, name: 'Book9', price:10, image: 'https://images.unsplash.com/photo-1542871793-fd7e2b3cd0b8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=452&q=80'},
         
-    ]
+    ];
+    const handleWishlist = () =>{
+        console.log('clicked');
+    }
     return (
         <div className='bookshop-container'>
             <div className="book-container">
             {
-                Books.map(book => <Book key={book.id} book={book}></Book>)
+                Books.map(book => <Book key={book.id} book={book} handleWishlist={handleWishlist}></Book>)
             }
             </div>
             <div className='booklist-conatianer'>
-
+                <Wishlist></Wishlist>
             </div>
         </div>
     );
