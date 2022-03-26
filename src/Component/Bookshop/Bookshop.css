@@ -21,12 +21,14 @@
     background-color: orange;
     border: none;
     border-radius: 8px;
-
 }
 .buttons:hover{
     background-color: orangered;
 }
-
+.randomBook{
+    margin: 10px;
+    padding: 10px;
+}
 @media screen and (max-width:600px) {
     .bookshop-container{
         grid-template-columns: repeat(1,1fr);

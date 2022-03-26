@@ -4,6 +4,7 @@ import Wishlist from '../Wishlist/Wishlist';
 import './Bookshop.css';
 
 
+
 const Bookshop = () => {
     const Books = [
         {id:1, name: 'Book1', price:10, image:'https://images.unsplash.com/photo-1592496431122-2349e0fbc666?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=912&q=80https://images.unsplash.com/photo-1592496431122-2349e0fbc666?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=912&q=80'},
@@ -18,10 +19,26 @@ const Bookshop = () => {
         
     ];
     const [wishlist, setWishlist] = useState([])
+    const [randomlist, setrandomlist] = useState([])
+    console.log(randomlist);
     const handleWishlist = (book) =>{
        const newWishlist = [...wishlist, book];
        setWishlist(newWishlist)
     }
+    console.log(wishlist);
+    function randomNumber(min=0 , max) {
+        return Math.floor(Math.random() * max);
+      }
+    const handleRandomFromWishlist = (wishlist) =>{
+      const randomNumberBook = randomNumber(0, wishlist.length);
+      const randomBookList = []
+       const newRandomBookList = wishlist[randomNumberBook];
+       randomBookList.push(newRandomBookList)
+         setrandomlist(randomBookList);
+         console.log(randomBookList);
+    } 
+        
+    
     return (
         <div className='bookshop-container'>
             <div className="book-container">
@@ -33,8 +50,13 @@ const Bookshop = () => {
                 <h1>Wishlist</h1>
             {wishlist.map(book =><Wishlist key={book.id} wishlist={book}></Wishlist>)}
                 <div>
-                    <button className="buttons">Chose 1 for me</button>
+                    <button onClick={()=>handleRandomFromWishlist(wishlist)} className="buttons">Chose 1 for me</button>
                     <button className="buttons">Chose again</button>
+                </div>
+                <div className='randomBook'>
+                    {
+                        randomlist.map(book => <p>{book.name}</p>)
+                    }
                 </div>
             </div>
         </div>
