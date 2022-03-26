@@ -30,7 +30,12 @@ const Bookshop = () => {
             }
             </div>
             <div className='booklist-conatianer'>
+                <h1>Wishlist</h1>
             {wishlist.map(book =><Wishlist key={book.id} wishlist={book}></Wishlist>)}
+                <div>
+                    <button className="buttons">Chose 1 for me</button>
+                    <button className="buttons">Chose again</button>
+                </div>
             </div>
         </div>
     );

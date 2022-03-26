@@ -8,9 +8,30 @@
     gap: 45px;
     margin: 100px 50px;
 }
+.booklist-conatianer{
+    background-color: rgba(255, 153, 0, 0.3);
+    
+}
+.booklist-conatianer h1{
+    padding: 30px 20px;
+}
+.buttons{
+    padding: 10px;
+    margin:10px;
+    background-color: orange;
+    border: none;
+    border-radius: 8px;
+
+}
+.buttons:hover{
+    background-color: orangered;
+}
 
 @media screen and (max-width:600px) {
-    .products-container{
+    .bookshop-container{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .book-container{
         grid-template-columns: repeat(1,1fr);
     }
 }

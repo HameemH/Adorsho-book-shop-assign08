@@ -1,12 +1,14 @@
 import React from 'react';
+import './Wishlist.css'
 
 const Wishlist = ({wishlist}) => {
   
-   console.log(wishlist);
     return (
-        <div>
-            <h1>{wishlist.name}</h1>
+        <div className='wishlist'>
+            <p>{wishlist.name}</p>
+            
         </div>
+        
     );
 };
 
