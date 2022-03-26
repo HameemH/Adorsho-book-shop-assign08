@@ -37,7 +37,10 @@ const Bookshop = () => {
          setrandomlist(randomBookList);
          console.log(randomBookList);
     } 
-        
+    const handleChoseAgain =() =>{
+        setWishlist([])
+        setrandomlist([]);
+    }
     
     return (
         <div className='bookshop-container'>
@@ -51,7 +54,7 @@ const Bookshop = () => {
             {wishlist.map(book =><Wishlist key={book.id} wishlist={book}></Wishlist>)}
                 <div>
                     <button onClick={()=>handleRandomFromWishlist(wishlist)} className="buttons">Chose 1 for me</button>
-                    <button className="buttons">Chose again</button>
+                    <button  onClick={() =>handleChoseAgain()} className="buttons">Chose again</button>
                 </div>
                 <div className='randomBook'>
                     {
