@@ -1,6 +1,7 @@
-# Adorsho BOOK Shop
+# Adorsho Book Shop
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+ [Live site](https://assignment-00008.netlify.app/).
 
 ## Available Scripts
 
